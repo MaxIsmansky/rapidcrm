@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class AbstractObjectPlate {
+public abstract class AbstractObjectPlate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
