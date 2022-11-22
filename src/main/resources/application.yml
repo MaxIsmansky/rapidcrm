@@ -1,0 +1,19 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/rapid_crm
+    username: postgres
+    password: root
+
+
+#r2dbc:
+#  url: 'r2dbc:postgresql://localhost:5432/rapid_crm'
+#  username: postgres
+#  password: root
+#  properties:
+#    sslMode: REQUIRE
+#  pool:
+#    enabled: true
+#    initial-size: 22
+#    max-size: 30
+#    max-idle-time: 5m
+#    validation-query: SELECT 1

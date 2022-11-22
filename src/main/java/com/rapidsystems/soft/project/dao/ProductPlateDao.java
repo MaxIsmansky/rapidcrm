@@ -14,7 +14,7 @@ public class ProductPlateDao implements Dao<ProductPlate> {
     private final ProductPlateRepository productPlateRepository;
 
     @Override
-    public Mono<ProductPlate> findById() {
+    public Mono<ProductPlate> findById(Long id) {
         return null;
     }
 

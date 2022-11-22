@@ -5,7 +5,7 @@ import reactor.core.publisher.Mono;
 
 public interface Dao<T> {
 
-    public Mono<T> findById();
+    public Mono<T> findById(Long id);
 
     public Flux<T> findAll();
 
