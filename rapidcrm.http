@@ -1,0 +1,33 @@
+GET localhost:8080/api/product/all
+
+###
+
+GET localhost:8080/api/product/find?id=637fe442abb8aa051efffcc9
+
+###
+
+POST localhost:8080/api/product/save
+Content-Type: application/json
+
+{
+  "calories": 12500,
+  "author":"Valery"
+}
+
+###
+
+PUT localhost:8080/api/product/update
+Content-Type: application/json
+
+{
+  "id": "637fe359ce044152d3f6c2a3",
+  "sectionId": null,
+  "author": "max",
+  "createdAt": null,
+  "calories": 1250,
+  "description": null
+}
+
+###
+
+DELETE localhost:8080/api/product/delete?id=6380c6d9a3b2b71de2012e53
