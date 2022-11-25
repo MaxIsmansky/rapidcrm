@@ -1,10 +1,9 @@
-package com.rapidsystems.soft.project.router;
+package com.rapidsystems.soft.project.handler;
 
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-public interface Handler {
+public interface ProductPlateHandler extends Handler {
 
-    Mono<ServerResponse> handle(ServerRequest request);
 }

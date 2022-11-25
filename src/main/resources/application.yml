@@ -1,20 +1,9 @@
 server:
   port: ${PORT}
-logging:
-  level:
-    io.r2dbc.postgresql.QUERY: DEBUG # for queries
-    io.r2dbc.postgresql.PARAM: DEBUG # for parameters
 
 spring:
-  r2dbc:
-    url: ${URL_R2DBC}
-    username: ${USER}
-    password: ${PASSWORD}
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-  flyway:
-    url: ${URL_FLYWAY}
-    user: ${USER}
-    password: ${PASSWORD}
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: rapidcrm

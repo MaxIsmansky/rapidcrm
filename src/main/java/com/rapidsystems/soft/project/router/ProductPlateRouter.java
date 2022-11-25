@@ -1,6 +1,7 @@
 package com.rapidsystems.soft.project.router;
 
-import com.rapidsystems.soft.project.dao.Dao;
+import com.rapidsystems.soft.project.dao.PlateDao;
+import com.rapidsystems.soft.project.handler.ProductPlateHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,15 +11,18 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 @Configuration
 @RequiredArgsConstructor
-public class ProductPlateRouter {
+public class ProductPlateRouter implements Router {
+    private final ProductPlateHandler productHandler;
 
-    private final Dao dao;
-    private final Handler productHandler;
-
+    @Override
     @Bean
     public RouterFunction<ServerResponse> objectPlateRouterFunction() {
         return RouterFunctions.route()
-                .POST("/api/product/save", productHandler::handle)
+                .GET("/api/product/find", productHandler::findById)
+                .GET("/api/product/all", productHandler::findAll)
+                .POST("/api/product/save", productHandler::save)
+                .PUT("/api/product/update", productHandler::update)
+                .DELETE("/api/product/delete", productHandler::deleteById)
                 .build();
     }
 }

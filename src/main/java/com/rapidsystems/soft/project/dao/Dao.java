@@ -3,12 +3,16 @@ package com.rapidsystems.soft.project.dao;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface Dao<T> {
+public interface Dao<T, R> {
 
-    public Mono<T> findById();
+    Mono<T> findById(String id);
 
-    public Flux<T> findAll();
+    Flux<T> findAll();
 
-    public Mono<T> save(T t);
+    Mono<T> save(T t);
+
+    Mono<T> update(T t);
+
+    Mono<R> deleteById(String id);
 
 }
