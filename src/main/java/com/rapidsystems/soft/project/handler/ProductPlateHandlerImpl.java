@@ -37,7 +37,6 @@ public class ProductPlateHandlerImpl implements ProductPlateHandler {
 
     @Override
     public Mono<ServerResponse> save(ServerRequest request) {
-        //todo параметризовать, метод должен сохранять любые объекты
         Mono<ProductPlate> productPlateMono = request.bodyToMono(ProductPlate.class);
         Mono<ProductPlate> savedProductMono = productPlateMono.flatMap(productPlate -> {
             Mono<ProductPlate> savedProductPlate = plateDao.save(productPlate);
