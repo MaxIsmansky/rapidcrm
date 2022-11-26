@@ -16,7 +16,7 @@ public class ProductPlateRouter implements Router {
 
     @Override
     @Bean
-    public RouterFunction<ServerResponse> objectPlateRouterFunction() {
+    public RouterFunction<ServerResponse> routerFunction() {
         return RouterFunctions.route()
                 .GET("/api/product/find", productHandler::findById)
                 .GET("/api/product/all", productHandler::findAll)
