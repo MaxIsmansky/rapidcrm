@@ -1,6 +1,5 @@
-package com.rapidsystems.soft.project.handler;
+package com.rapidsystems.soft.project.handler.product;
 
-import com.mongodb.internal.connection.Server;
 import com.rapidsystems.soft.project.dao.PlateDao;
 import com.rapidsystems.soft.project.model.dto.OperationStatusResponse;
 import com.rapidsystems.soft.project.model.plate.ProductPlate;
