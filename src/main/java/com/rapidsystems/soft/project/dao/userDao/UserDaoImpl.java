@@ -15,8 +15,8 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class UserDaoImpl implements UserDao<User, OperationStatusResponse> {
 
-    @Autowired
-    private UserRepository userRepository;
+
+    private final UserRepository userRepository;
 
 
     @Override
