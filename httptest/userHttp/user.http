@@ -1,0 +1,39 @@
+GET localhost:8080/api/users
+
+###
+
+GET localhost:8080/api/users/find?id=63811592df0f1e0033ab9e9c
+
+###
+
+POST localhost:8080/api/users/save
+Content-Type: application/json
+
+{
+  "id": "63811416df0f1e0033ab9e96",
+  "lastName" : "Иванов",
+  "firstName" : "Иван",
+  "middleName" : "Иванович",
+  "email" : "vanka@mail.ru",
+  "emailConfirmed" : "false",
+  "password" : "pass",
+  "registered": "2017-01-23T16:46:07.812Z",
+  "updated": "2017-01-23T16:46:07.812Z",
+  "enabled": "true",
+  "phone": "88005553535",
+  "roles" : ["USER"]
+}
+
+###
+
+PUT localhost:8080/api/users/update
+Content-Type: application/json
+
+{
+  "id": "63811592df0f1e0033ab9e9c",
+  "lastName" : "Херов"
+}
+
+###
+
+DELETE localhost:8080/api/users/6380c6d9a3b2b71de2012e53
