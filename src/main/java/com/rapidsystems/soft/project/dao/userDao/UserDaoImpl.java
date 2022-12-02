@@ -15,15 +15,14 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class UserDaoImpl implements UserDao<User, OperationStatusResponse> {
 
-    @Autowired
-    private UserRepository userRepository;
+
+    private final UserRepository userRepository;
 
 
     @Override
     public Mono<User> findById(String id) {
         return userRepository.findById(id);
     }
-
     @Override
     public Flux<User> findAll() {
         return userRepository.findAll();

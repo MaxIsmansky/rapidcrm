@@ -1,6 +1,7 @@
 package com.rapidsystems.soft.project.router.userRouter;
 
 import com.rapidsystems.soft.project.handler.user.UserHandler;
+import com.rapidsystems.soft.project.router.Router;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,15 +12,15 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 @Configuration
 @RequiredArgsConstructor
-public class UserRouterImpl implements UserRouter  {
+public class UserRouterImpl implements Router {
 
-    @Autowired
+
     private final UserHandler userHandler;
 
 
     @Override
-    @Bean
-    public RouterFunction<ServerResponse> objectUserRouterFunction() {
+    @Bean(name = "userRouter")
+    public RouterFunction<ServerResponse> routerFunction() {
         return  RouterFunctions.route()
                 .GET("/api/users/find", userHandler::findById)
                 .GET("/api/users", userHandler::findAll)
