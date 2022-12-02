@@ -1,6 +1,5 @@
-package com.rapidsystems.soft.project.handler;
+package com.rapidsystems.soft.project.handler.product;
 
-import com.mongodb.internal.connection.Server;
 import com.rapidsystems.soft.project.dao.PlateDao;
 import com.rapidsystems.soft.project.model.dto.OperationStatusResponse;
 import com.rapidsystems.soft.project.model.plate.ProductPlate;
@@ -37,7 +36,6 @@ public class ProductPlateHandlerImpl implements ProductPlateHandler {
 
     @Override
     public Mono<ServerResponse> save(ServerRequest request) {
-        //todo параметризовать, метод должен сохранять любые объекты
         Mono<ProductPlate> productPlateMono = request.bodyToMono(ProductPlate.class);
         Mono<ProductPlate> savedProductMono = productPlateMono.flatMap(productPlate -> {
             Mono<ProductPlate> savedProductPlate = plateDao.save(productPlate);

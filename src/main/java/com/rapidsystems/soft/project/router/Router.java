@@ -6,6 +6,5 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 public interface Router {
     @Bean
-    RouterFunction<ServerResponse> objectPlateRouterFunction();
-
+    RouterFunction<ServerResponse> routerFunction();
 }

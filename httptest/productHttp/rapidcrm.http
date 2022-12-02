@@ -10,8 +10,14 @@ POST localhost:8080/api/product/save
 Content-Type: application/json
 
 {
-  "calories": 12500,
-  "author":"Valery"
+  "calories": 1415,
+  "author":"New",
+  "additionalFieldList": [
+    {
+      "fieldName": "Процент воды в супе",
+      "fieldValue": "100"
+    }
+  ]
 }
 
 ###
