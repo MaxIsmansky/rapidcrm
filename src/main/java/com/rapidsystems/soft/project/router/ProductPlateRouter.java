@@ -22,9 +22,20 @@ public class ProductPlateRouter implements Router {
                 .GET("/api/product/find", productHandler::findById)
                 .GET("/api/product/all", productHandler::findAll)
                 .POST("/api/product/save", productHandler::save)
-                .POST("/api/product/image", productImageHandler::save)
                 .PUT("/api/product/update", productHandler::update)
                 .DELETE("/api/product/delete", productHandler::deleteById)
+                .build();
+    }
+
+    @Bean
+    //todo вообще если хранить картинки на том же сервере что и данные, то можно все это отправлять и получать в том же запросе,
+    // но лучше в будущем использовать внешнее хранилище, поэтому пока будет дополнительный запрос на получение.
+    // В будущем разверну ceph и переедем туда
+    public RouterFunction<ServerResponse> imageRouterFunction() {
+        return RouterFunctions.route()
+                .GET("/api/product/picture", productImageHandler::findById)
+                .POST("/api/product/image", productImageHandler::save)
+                .DELETE("/api/product/image/delete", productImageHandler::deleteById)
                 .build();
     }
 }

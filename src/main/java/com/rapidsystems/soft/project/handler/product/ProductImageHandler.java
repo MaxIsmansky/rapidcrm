@@ -8,5 +8,4 @@ import reactor.core.publisher.Mono;
 
 public interface ProductImageHandler extends Handler {
 
-    Mono<ServerResponse> saveImage(ServerRequest request);
 }
