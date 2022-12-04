@@ -12,6 +12,7 @@ Content-Type: application/json
 {
   "calories": 1415,
   "author":"New",
+  "price" :  720.0,
   "additionalFieldList": [
     {
       "fieldName": "Процент воды в супе",

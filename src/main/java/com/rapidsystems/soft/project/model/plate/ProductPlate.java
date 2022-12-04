@@ -25,6 +25,8 @@ public class ProductPlate extends AbstractPlate {
     private String imageLink;
 
     private List<AdditionalField> additionalFieldList;
+
+    private Double price;
 }
 
 
