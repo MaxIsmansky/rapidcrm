@@ -33,7 +33,7 @@ public class Order {
 
     private Map<String, Integer> ordersPlates;
 
-    private Double price;
+    private int price;
 
 
 }

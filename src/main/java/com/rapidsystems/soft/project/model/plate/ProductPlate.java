@@ -26,7 +26,7 @@ public class ProductPlate extends AbstractPlate {
 
     private List<AdditionalField> additionalFieldList;
 
-    private Double price;
+    private int price;
 }
 
 
