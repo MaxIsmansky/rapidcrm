@@ -1,0 +1,43 @@
+GET localhost:8080/api/admin/orders
+
+###
+
+GET localhost:8080/api/admin/orders/find?id=638b5f2792af651d72da4507
+
+###
+
+POST localhost:8080/api/admin/orders/save
+Content-Type: application/json
+
+{
+   "userId" : "63811416df0f1e0033ab9e96",
+   "ordersPlates" : {
+     "638b5cbe03649913c6114bde": 1
+   },
+  "price" : 720.0
+}
+
+###
+
+PUT localhost:8080/api/users/update
+Content-Type: application/json
+
+{
+  "id": "63811592df0f1e0033ab9e9c",
+  "lastName" : "Херов"
+}
+
+###
+
+DELETE localhost:8080/api/users/6380c6d9a3b2b71de2012e53
+
+###
+
+
+
+PUT localhost:8080/api/admin/orders/processing?id=638b5f2792af651d72da4507
+
+###
+
+PUT localhost:8080/api/admin/orders/complete?id=638b5f2792af651d72da4507
+
