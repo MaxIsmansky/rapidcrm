@@ -28,14 +28,12 @@ dependencies {
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'org.testcontainers:junit-jupiter'
-
 	compileOnly('javax.persistence:javax.persistence-api:2.2')
-
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb-reactive', version: '2.7.5'
+	implementation "org.springframework.boot:spring-boot-starter-security"
 
 }
 

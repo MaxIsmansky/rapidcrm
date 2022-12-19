@@ -13,40 +13,26 @@ import javax.persistence.Id;
 import java.util.Date;
 import java.util.Set;
 
-@Getter
-@Setter
-@Accessors(chain = true)
-@NoArgsConstructor
-@AllArgsConstructor
-@Document(collection = "users")
 public class User {
 
-    @MongoId
-    private String id;
+    protected String lastName;
 
-    private String lastName;
+    protected String firstName;
 
-
-    private String firstName;
-
-
-    private String middleName;
+    protected String middleName;
 
     //todo добавить валидацию email (только разрешенные домены)
-    private String email;
+    protected String email;
 
-    private Boolean emailConfirmed = false;
+    protected Boolean emailConfirmed = false;
 
-    private String password;
+    protected Date registered = new Date();
 
-    private Date registered = new Date();
+    protected Date updated = new Date();
+    protected Boolean enabled = true;
 
-    private Date updated = new Date();
+    protected String phone;
 
-    private Boolean enabled = true;
-
-    private String phone;
-
-    private Set<Role> roles;
+    protected Set<Role> roles;
 
 }

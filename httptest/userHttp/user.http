@@ -10,18 +10,18 @@ POST localhost:8080/api/users/save
 Content-Type: application/json
 
 {
-  "id": "63811416df0f1e0033ab9e96",
   "lastName" : "Иванов",
   "firstName" : "Иван",
   "middleName" : "Иванович",
   "email" : "vanka@mail.ru",
+  "username" : "user3",
   "emailConfirmed" : "false",
-  "password" : "pass",
+  "password" : "pass3",
   "registered": "2017-01-23T16:46:07.812Z",
   "updated": "2017-01-23T16:46:07.812Z",
   "enabled": "true",
   "phone": "88005553535",
-  "roles" : ["USER"]
+  "role" : "ROLE_ADMIN"
 }
 
 ###

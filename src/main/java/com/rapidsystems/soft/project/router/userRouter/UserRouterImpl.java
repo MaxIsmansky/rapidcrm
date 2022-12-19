@@ -14,9 +14,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 @RequiredArgsConstructor
 public class UserRouterImpl implements Router {
 
-
     private final UserHandler userHandler;
-
 
     @Override
     @Bean(name = "userRouter")

@@ -3,6 +3,7 @@ package com.rapidsystems.soft.project.handler.user;
 import com.rapidsystems.soft.project.dao.userDao.UserDao;
 import com.rapidsystems.soft.project.model.dto.OperationStatusResponse;
 import com.rapidsystems.soft.project.model.plate.ProductPlate;
+import com.rapidsystems.soft.project.model.user.SecurityUser;
 import com.rapidsystems.soft.project.model.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,29 +26,29 @@ public class UserHandlerImpl implements UserHandler{
     @Override
     public Mono<ServerResponse> findById(ServerRequest request) {
         Optional<String> id = request.queryParam("id");
-        Mono<User> userMono = userDao.findById(id.orElseThrow(() -> new RuntimeException("Parameter id can't be empty!")));
+        Mono<SecurityUser> userMono = userDao.findById(id.orElseThrow(() -> new RuntimeException("Parameter id can't be empty!")));
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(userMono, User.class);
+                .body(userMono, SecurityUser.class);
     }
 
     @Override
     public Mono<ServerResponse> findAll(ServerRequest request) {
         return  ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(userDao.findAll(), User.class);
+                .body(userDao.findAll(), SecurityUser.class);
     }
 
     @Override
     public Mono<ServerResponse> save(ServerRequest request) {
-        Mono<User> UserMono = request.bodyToMono(User.class);
-        Mono<User> savedUserMono = UserMono.flatMap(user -> {
-            Mono<User> savedUser = userDao.save(user);
+        Mono<SecurityUser> UserMono = request.bodyToMono(SecurityUser.class);
+        Mono<SecurityUser> savedUserMono = UserMono.flatMap(user -> {
+            Mono<SecurityUser> savedUser = userDao.save(user);
             return savedUser;
         });
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(savedUserMono, User.class);
+                .body(savedUserMono, SecurityUser.class);
     }
 
     @Override
@@ -61,13 +62,13 @@ public class UserHandlerImpl implements UserHandler{
 
     @Override
     public Mono<ServerResponse> update(ServerRequest request) {
-        Mono<User> userMono = request.bodyToMono(User.class);
-        final Mono<User> updatedUserMono = userMono.flatMap(user -> {
-            Mono<User> updatedUser = userDao.save(user);
+        Mono<SecurityUser> userMono = request.bodyToMono(SecurityUser.class);
+        final Mono<SecurityUser> updatedUserMono = userMono.flatMap(user -> {
+            Mono<SecurityUser> updatedUser = userDao.save(user);
             return updatedUser;
         });
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(updatedUserMono, User.class);
+                .body(updatedUserMono, SecurityUser.class);
     }
 }
