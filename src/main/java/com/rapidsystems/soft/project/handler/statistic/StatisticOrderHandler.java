@@ -4,6 +4,7 @@ import com.mongodb.lang.Nullable;
 import com.rapidsystems.soft.project.dao.statisticDao.OrderStatisticDao;
 import com.rapidsystems.soft.project.model.dto.statisticDto.OrderStatisticTo;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -27,6 +28,7 @@ public class StatisticOrderHandler {
 
 
 
+    @SneakyThrows
     public Mono<ServerResponse> findAll(ServerRequest request)  {
         Optional<String> startDate = request.queryParam("startDate");
         Optional<String> endDate = request.queryParam("endDate");

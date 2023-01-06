@@ -23,7 +23,6 @@ public class StatisticRouter implements Router {
 
     @Bean(name = "StatisticOrder")
     public RouterFunction<ServerResponse> routerFunction() {
-        System.out.println("пришёл сюда RouterFunction");
         return RouterFunctions.route()
                 .GET("/api/admin/statistic/ordersPerDay", statisticOrderHandler::findAll)
                 .build();
