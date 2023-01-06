@@ -22,7 +22,7 @@ public class SecurityConfiguration {
                 .formLogin().and()
                 .httpBasic().disable()
                 .authorizeExchange()
-                .pathMatchers("/", "/login", "/api/product/all", "/api/users/save").permitAll()
+                .pathMatchers("/", "/login", "/api/product/all", "/api/users/save","/api/admin/statistic/ordersPerDay").permitAll()
                 .pathMatchers("/api/users", "/api/users/update", "/api/users/delete").hasRole("ADMIN")
                 .anyExchange().authenticated()
                 .and()
