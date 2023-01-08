@@ -27,12 +27,17 @@ PUT localhost:8080/api/product/update
 Content-Type: application/json
 
 {
-  "id": "637fe359ce044152d3f6c2a3",
-  "sectionId": null,
-  "author": "max",
-  "createdAt": null,
-  "calories": 1250,
-  "description": null
+  "id": "638b5df28f1ada1f66416562",
+  "calories": 1415,
+  "author":"New",
+  "price" :  720.0,
+  "additionalFieldList": [
+    {
+      "fieldName": "Процент воды в супе",
+      "fieldValue": "100"
+    }
+    ],
+  "name" : "Украинский борщ"
 }
 
 ###
