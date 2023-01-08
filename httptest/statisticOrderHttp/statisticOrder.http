@@ -1,1 +1,1 @@
-GET localhost:8080/api/admin/statistic/orders
+GET localhost:8080/api/admin/statistic/ordersPerDay

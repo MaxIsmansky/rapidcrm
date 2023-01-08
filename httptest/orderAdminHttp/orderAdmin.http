@@ -11,10 +11,19 @@ Content-Type: application/json
 
 {
    "userId" : "63811416df0f1e0033ab9e96",
-   "ordersPlates" : {
-     "638b5cbe03649913c6114bde": 1
-   },
-  "price" : 720.0
+   "ordersPlates" : [
+     {
+       "productId": "638b5cbe03649913c6114bde",
+       "count": 1,
+       "price": 720
+     },
+     {
+       "productId": "638b5df28f1ada1f66416562",
+       "count": 2,
+       "price": 2800
+     }
+   ],
+  "price" : 3500
 }
 
 ###
@@ -35,9 +44,9 @@ DELETE localhost:8080/api/users/6380c6d9a3b2b71de2012e53
 
 
 
-PUT localhost:8080/api/admin/orders/processing?id=638b5f2792af651d72da4507
+PUT localhost:8080/api/admin/orders/processing?id=63bac80e6cb2ca7cf31a59ad
 
 ###
 
-PUT localhost:8080/api/admin/orders/complete?id=638b5f2792af651d72da4507
+PUT localhost:8080/api/admin/orders/complete?id=63bac80e6cb2ca7cf31a59ad
 

@@ -1,6 +1,5 @@
 package com.rapidsystems.soft.project.model.order;
 
-import com.rapidsystems.soft.project.model.plate.ProductPlate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
-import java.util.Map;
+import java.util.List;
 
 @Getter
 @Setter
@@ -31,7 +30,7 @@ public class Order {
 
     private Date completeDate;
 
-    private Map<String, Integer> ordersPlates;
+    private List<ProductOrderInfo> ordersPlates;
 
     private int price;
 

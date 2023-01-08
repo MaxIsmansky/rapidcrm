@@ -28,7 +28,7 @@ public class StatisticOrderHandler {
 
 
 
-    @SneakyThrows
+
     public Mono<ServerResponse> findAll(ServerRequest request)  {
         Optional<String> startDate = request.queryParam("startDate");
         Optional<String> endDate = request.queryParam("endDate");
@@ -36,6 +36,19 @@ public class StatisticOrderHandler {
             return ServerResponse.ok()
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(orderStatisticDao.getByDate(startDate.orElseGet(() -> null), endDate.orElseGet(() -> null)), OrderStatisticTo.class);
+        } catch (ParseException e) {
+            return Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST));
+        }
+
+    }
+
+    public Mono<ServerResponse> findAllOrderProducts(ServerRequest request)  {
+        Optional<String> startDate = request.queryParam("startDate");
+        Optional<String> endDate = request.queryParam("endDate");
+        try {
+            return ServerResponse.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(orderStatisticDao.getOrderProduct(startDate.orElseGet(() -> null), endDate.orElseGet(() -> null)), OrderStatisticTo.class);
         } catch (ParseException e) {
             return Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST));
         }

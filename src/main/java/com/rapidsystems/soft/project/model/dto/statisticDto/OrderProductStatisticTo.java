@@ -4,22 +4,17 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-import java.io.Serial;
-import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
 @Getter
 @EqualsAndHashCode
-public class OrderStatisticTo  {
-
+public class OrderProductStatisticTo {
     @JsonProperty("date")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date id;
-    private Integer countOrders;
-    private Integer sumPrice;
-
+    private List<ProductInfoTo> info;
 }
