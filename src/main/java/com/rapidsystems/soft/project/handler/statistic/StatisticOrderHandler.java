@@ -55,6 +55,32 @@ public class StatisticOrderHandler {
 
     }
 
+    public Mono<ServerResponse> getCountAndSumPriceOrders(ServerRequest request)  {
+        Optional<String> startDate = request.queryParam("startDate");
+        Optional<String> endDate = request.queryParam("endDate");
+        try {
+            return ServerResponse.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(orderStatisticDao.getCountAndSumOrders(startDate.orElseGet(() -> null), endDate.orElseGet(() -> null)), OrderStatisticTo.class);
+        } catch (ParseException e) {
+            return Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST));
+        }
+
+    }
+
+    public Mono<ServerResponse> findInfoByProducts(ServerRequest request)  {
+        Optional<String> startDate = request.queryParam("startDate");
+        Optional<String> endDate = request.queryParam("endDate");
+        try {
+            return ServerResponse.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(orderStatisticDao.getInfoByProducts(startDate.orElseGet(() -> null), endDate.orElseGet(() -> null)), OrderStatisticTo.class);
+        } catch (ParseException e) {
+            return Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST));
+        }
+
+    }
+
 
 
 

@@ -28,7 +28,9 @@ public class SecurityConfiguration {
                         ,"/api/admin/orders/processing"
                         ,"/api/admin/orders/complete"
                         ,"/api/product/update"
-                        ,"/api/admin/statistic/productsPerDay").permitAll()
+                        ,"/api/admin/statistic/productsPerDay"
+                        ,"/api/admin/statistic/orders"
+                        ,"/api/admin/statistic/products").permitAll()
                 .pathMatchers("/api/users", "/api/users/update", "/api/users/delete").hasRole("ADMIN")
                 .anyExchange().authenticated()
                 .and()

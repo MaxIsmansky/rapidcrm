@@ -25,7 +25,9 @@ public class StatisticRouter implements Router {
     public RouterFunction<ServerResponse> routerFunction() {
         return RouterFunctions.route()
                 .GET("/api/admin/statistic/ordersPerDay", statisticOrderHandler::findAll)
+                .GET("/api/admin/statistic/orders", statisticOrderHandler::getCountAndSumPriceOrders)
                 .GET("/api/admin/statistic/productsPerDay", statisticOrderHandler::findAllOrderProducts)
+                .GET("/api/admin/statistic/products", statisticOrderHandler::findInfoByProducts)
                 .build();
     }
 }

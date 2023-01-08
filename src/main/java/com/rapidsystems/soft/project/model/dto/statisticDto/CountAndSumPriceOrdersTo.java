@@ -1,5 +1,6 @@
 package com.rapidsystems.soft.project.model.dto.statisticDto;
 
+
 import lombok.*;
 
 @NoArgsConstructor
@@ -7,10 +8,9 @@ import lombok.*;
 @Setter
 @Getter
 @EqualsAndHashCode
-public class ProductInfoTo {
+public class CountAndSumPriceOrdersTo {
 
-    private String product;
-    private Integer count;
     private Integer sumPrice;
+    private Integer countOrders;
 
 }
